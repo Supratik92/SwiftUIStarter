@@ -10,18 +10,22 @@ import SwiftUI
 
 struct ScrollViewList: View {
     
-    private var listModelData: [ListModel] {
-        return getModelData()
-    }
+    @ObservedObject var viewModel: MovieDataObservable
+
 
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
-                ForEach(listModelData, id: \.self) {  listModel in
-                    CellRow(listModel: listModel)
+                ForEach(viewModel.movieResponse, id: \.self) {  response in
+                    ZStack {
+                        VStack{
+                            CellRow(listModel: response)
+                        }
+                    }
                 }
-            .navigationBarTitle(Text("Scroll View with List"))
             }
+            .navigationBarTitle(Text("Scroll View with List"))
+
         }
     }
 
@@ -33,8 +37,8 @@ struct ScrollViewList: View {
      }
 }
 
-struct ScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollViewList()
-    }
-}
+//struct ScrollView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScrollViewList()
+//    }
+//}

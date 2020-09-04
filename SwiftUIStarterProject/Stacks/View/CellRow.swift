@@ -7,37 +7,28 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
     struct CellRow: View {
 
-        let listModel: ListModel
+        let listModel: MoviePopluarity
+        @State private var isAnimating = true
 
         var body: some View {
-            HStack(spacing: 20){
-                Image(listModel.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 40, height: 40)
-                    .cornerRadius(4)
-
-                VStack(alignment: .leading,
-                       spacing: 2) {
-                        Text(listModel.name)
-                            .font(.headline)
-                        Text(listModel.designation)
-                            .font(.subheadline)
-                }
-
-                Spacer()
-
-                Button(action: didTapOnButton) {
-                    Image("chevron.right")
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(Color.black)
-                        .border(Color.gray, width: 1)
-                    
-                }
-            }.padding(20)
+            VStack(alignment: .leading,
+                   spacing: 4) {
+                    WebImage(url: URL(string: MovieApi.imageFetchBaseUrl + listModel.posterPath),
+                             options: [.progressiveLoad, .delayPlaceholder],
+                             isAnimating: $isAnimating)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.width - 40 ,
+                               height: UIScreen.main.bounds.width / 2)
+                        .cornerRadius(4)
+                    Text(listModel.title)
+                        .font(.headline)
+                    Text(listModel.overview)
+            }
 
         }
 

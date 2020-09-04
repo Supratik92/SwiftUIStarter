@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		751F0EE524D008BF00D0C562 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F0EE424D008BF00D0C562 /* LoginView.swift */; };
 		751F0EE824D0095C00D0C562 /* Colors+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F0EE724D0095C00D0C562 /* Colors+Extension.swift */; };
 		751F0EEB24D00D4300D0C562 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F0EEA24D00D4300D0C562 /* LoginViewModel.swift */; };
+		752740C025023886002E2F51 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752740BF25023886002E2F51 /* Picker.swift */; };
+		752740C92502388D002E2F51 /* MovieDataObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752740C32502388D002E2F51 /* MovieDataObservable.swift */; };
+		752740CA2502388D002E2F51 /* MovieNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752740C52502388D002E2F51 /* MovieNetwork.swift */; };
+		752740CB2502388D002E2F51 /* NetworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752740C62502388D002E2F51 /* NetworkCoordinator.swift */; };
+		752740CC2502388D002E2F51 /* MovieModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752740C82502388D002E2F51 /* MovieModal.swift */; };
 		7539C1D224C9668600A9C1F6 /* SegmentedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539C1D124C9668600A9C1F6 /* SegmentedListView.swift */; };
 		7539C1D424C96A0700A9C1F6 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539C1D324C96A0700A9C1F6 /* ContactView.swift */; };
 		7539C1D724C97BFF00A9C1F6 /* SegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539C1D624C97BFF00A9C1F6 /* SegmentedScrollView.swift */; };
@@ -68,6 +73,11 @@
 		751F0EE424D008BF00D0C562 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		751F0EE724D0095C00D0C562 /* Colors+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extension.swift"; sourceTree = "<group>"; };
 		751F0EEA24D00D4300D0C562 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		752740BF25023886002E2F51 /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		752740C32502388D002E2F51 /* MovieDataObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDataObservable.swift; sourceTree = "<group>"; };
+		752740C52502388D002E2F51 /* MovieNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieNetwork.swift; sourceTree = "<group>"; };
+		752740C62502388D002E2F51 /* NetworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCoordinator.swift; sourceTree = "<group>"; };
+		752740C82502388D002E2F51 /* MovieModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModal.swift; sourceTree = "<group>"; };
 		7539C1D124C9668600A9C1F6 /* SegmentedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedListView.swift; sourceTree = "<group>"; };
 		7539C1D324C96A0700A9C1F6 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		7539C1D624C97BFF00A9C1F6 /* SegmentedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedScrollView.swift; sourceTree = "<group>"; };
@@ -170,6 +180,49 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		752740BE25023886002E2F51 /* FormAndPicker */ = {
+			isa = PBXGroup;
+			children = (
+				752740BF25023886002E2F51 /* Picker.swift */,
+			);
+			path = FormAndPicker;
+			sourceTree = "<group>";
+		};
+		752740C12502388D002E2F51 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				752740C22502388D002E2F51 /* ViewModel */,
+				752740C42502388D002E2F51 /* Network */,
+				752740C72502388D002E2F51 /* Model */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		752740C22502388D002E2F51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				752740C32502388D002E2F51 /* MovieDataObservable.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		752740C42502388D002E2F51 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				752740C52502388D002E2F51 /* MovieNetwork.swift */,
+				752740C62502388D002E2F51 /* NetworkCoordinator.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		752740C72502388D002E2F51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				752740C82502388D002E2F51 /* MovieModal.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7539C1D024C9666700A9C1F6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +249,7 @@
 				753EB65524AF0451002F8C97 /* SwiftUIStarterProjectTests */,
 				753EB66024AF0451002F8C97 /* SwiftUIStarterProjectUITests */,
 				753EB63D24AF044F002F8C97 /* Products */,
+				DDEA58E25E6891907DF645A9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +266,8 @@
 		753EB63E24AF044F002F8C97 /* SwiftUIStarterProject */ = {
 			isa = PBXGroup;
 			children = (
+				752740BE25023886002E2F51 /* FormAndPicker */,
+				752740C12502388D002E2F51 /* Combine */,
 				759D680A24DD4333004E3B52 /* MovieApp */,
 				751F0EE224D008A600D0C562 /* Login */,
 				758A921024C7F969000A81E7 /* Segmented Control */,
@@ -346,6 +402,13 @@
 			path = Stacks;
 			sourceTree = "<group>";
 		};
+		DDEA58E25E6891907DF645A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,16 +541,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E1CC3224C15E590013EF00 /* CellRow.swift in Sources */,
+				752740C025023886002E2F51 /* Picker.swift in Sources */,
 				758A921524C7FD7B000A81E7 /* Contacts.swift in Sources */,
+				752740CA2502388D002E2F51 /* MovieNetwork.swift in Sources */,
 				759D682024DD43D0004E3B52 /* GenreView.swift in Sources */,
 				7552ADB024B6FFB200A7A562 /* ImageChallengeView.swift in Sources */,
 				759D682424DD43D0004E3B52 /* MovieRatingsView.swift in Sources */,
 				759825BA24C9DCA3005BDA92 /* ViewProvider.swift in Sources */,
 				758A921924C7FF12000A81E7 /* ContactCell.swift in Sources */,
 				753EB64024AF044F002F8C97 /* AppDelegate.swift in Sources */,
+				752740CB2502388D002E2F51 /* NetworkCoordinator.swift in Sources */,
 				759D681924DD43D0004E3B52 /* ImageAndRatingsView.swift in Sources */,
 				759D681B24DD43D0004E3B52 /* CornerRadiusViewModifier.swift in Sources */,
 				759D682624DD4443004E3B52 /* CastAndCrewModel.swift in Sources */,
+				752740CC2502388D002E2F51 /* MovieModal.swift in Sources */,
 				7539C1DB24C98AAE00A9C1F6 /* ContainerView.swift in Sources */,
 				7539C1D724C97BFF00A9C1F6 /* SegmentedScrollView.swift in Sources */,
 				7539C1D224C9668600A9C1F6 /* SegmentedListView.swift in Sources */,
@@ -501,6 +568,7 @@
 				751F0EE524D008BF00D0C562 /* LoginView.swift in Sources */,
 				759D681A24DD43D0004E3B52 /* CastAndCrewsView.swift in Sources */,
 				7539C1D424C96A0700A9C1F6 /* ContactView.swift in Sources */,
+				752740C92502388D002E2F51 /* MovieDataObservable.swift in Sources */,
 				759D682324DD43D0004E3B52 /* CastCrewHolderView.swift in Sources */,
 				7539C1D924C97D1E00A9C1F6 /* SwitcherView.swift in Sources */,
 				754FC3AE24C164BB0057B840 /* ListModel.swift in Sources */,

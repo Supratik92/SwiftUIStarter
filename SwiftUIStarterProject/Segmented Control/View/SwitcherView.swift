@@ -14,6 +14,7 @@ import SwiftUI
     case segmentedControlListView = "Segmentted Control with List View"
     case segmentedControlScrollView = "Segmented Control with Scroll View"
     case movieRatingView = "Movie Rating View"
+    case formAndPickerView = "Form and Picker View"
 
     var id: UUID {
         return UUID()
@@ -27,6 +28,7 @@ struct SwitcherView: View {
     @State private var showSegmentedListView = false
     @State private var showSegmentedScrollView = false
     @State private var showMovieRatingView = false
+    @State private var showFormAndPickerView = false
 
 
     var body: some View {
@@ -35,12 +37,12 @@ struct SwitcherView: View {
                 ContentView(title: DesignViews.listView.rawValue, font: .body).onTapGesture {
                     self.showListView.toggle()
                 }.sheet(isPresented: self.$showListView) {
-                        ListView()
+                    ListView(viewModel: MovieDataObservable())
                 }
                 ContentView(title: DesignViews.scrollView.rawValue, font: .body).onTapGesture {
                     self.showScrollView.toggle()
                 }.sheet(isPresented: $showScrollView) {
-                    ScrollViewList()
+                    ScrollViewList(viewModel: MovieDataObservable())
                 }
                 ContentView(title: DesignViews.segmentedControlListView.rawValue, font: .body).onTapGesture {
                     self.showSegmentedListView.toggle()
@@ -56,6 +58,11 @@ struct SwitcherView: View {
                     self.showMovieRatingView.toggle()
                 }.sheet(isPresented: $showMovieRatingView) {
                     MovieBaseView()
+                }
+                ContentView(title: DesignViews.formAndPickerView.rawValue, font: .body).onTapGesture {
+                    self.showFormAndPickerView.toggle()
+                }.sheet(isPresented: $showFormAndPickerView) {
+                    FormAndPicker()
                 }
             }
             .navigationBarTitle(Text("Weekly Designs"))
