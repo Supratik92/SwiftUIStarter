@@ -15,6 +15,7 @@ import SwiftUI
     case segmentedControlScrollView = "Segmented Control with Scroll View"
     case movieRatingView = "Movie Rating View"
     case formAndPickerView = "Form and Picker View"
+    case geometryView = "Geometry View"
 
     var id: UUID {
         return UUID()
@@ -29,6 +30,7 @@ struct SwitcherView: View {
     @State private var showSegmentedScrollView = false
     @State private var showMovieRatingView = false
     @State private var showFormAndPickerView = false
+    @State private var showGemetryView = false
 
 
     var body: some View {
@@ -64,6 +66,16 @@ struct SwitcherView: View {
                 }.sheet(isPresented: $showFormAndPickerView) {
                     FormAndPicker()
                 }
+                ContentView(title: DesignViews.geometryView.rawValue, font: .body).onTapGesture {
+                    self.showGemetryView.toggle()
+                }.sheet(isPresented: $showGemetryView) {
+                    if #available(iOS 14.0, *) {
+                        GeometryExample()
+                    } else {
+                       Text("Available in iOS 14 and Above")
+                    }
+                }
+
             }
             .navigationBarTitle(Text("Weekly Designs"))
             .font(.headline)
